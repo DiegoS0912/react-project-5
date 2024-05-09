@@ -6,6 +6,7 @@ import { useDispatch } from 'react-redux';
 const SelectType = ({setSelectValue}) => {
   
   const [ types, getTypes ] = useFetch();
+  
   const dispatch = useDispatch();
   
   useEffect(() => {

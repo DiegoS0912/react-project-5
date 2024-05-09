@@ -1,3 +1,27 @@
 .poke_id {
-    width: 100px;
+    display: flex;
+    width: 250px;
+    justify-content: center;
+    align-items: center;
+    
+}
+.stats_bar {
+    background-color: white;
+    height: 30px;
+    width: 100%;
+}
+.stats_prog {
+    background: linear-gradient(90deg, #FCD676 -2.25%, #E6901E 133.18%);
+    width: 50%;
+    height: 100%;
+}
+.movements_container{
+    
+}
+.pokedata_moves {
+    background: rgba(229, 229, 229, 1);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 25px;
 }

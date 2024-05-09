@@ -18,7 +18,7 @@ const PokedexPage = () => {
 
     useEffect(() => {
         if (selectValue==='allPokemons') {
-            const url = 'https://pokeapi.co/api/v2/pokemon/?limit=1305';
+            const url = 'https://pokeapi.co/api/v2/pokemon/?limit=1300';
             getPokemons(url); 
         } else {
             getPerType(selectValue);
@@ -42,7 +42,7 @@ const PokedexPage = () => {
     }
 
         const quantity = 12;
-        const total = cbFilter() && Math.ceil(cbFilter() / quantity);
+        // const total = Math.ceil(cbFilter().length / quantity);
         const pagination = () => {
             const end = quantity * page;
             const start = end - quantity;
@@ -76,7 +76,7 @@ const PokedexPage = () => {
             <Pagination
                 setPage={setPage}
                 page={page}
-                total={total}
+                // total={total}
             />
         </div>
     )
