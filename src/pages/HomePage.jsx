@@ -18,10 +18,6 @@ const HomePage = () => {
     }
 
   return (
-    <>
-      <header className='head'>
-      <img src="./assets/imagen_foot.png" alt="image" />
-      </header>
       <div className='front_page'>
         <img src="./assets/pokedex_img.png" alt="pokedex_img" />
         <h1 className='title'>¡Hola Entrenador!</h1>
@@ -31,7 +27,6 @@ const HomePage = () => {
             <button className='form_btn'>Comenzar</button>
         </form>
       </div>
-    </>
   )
 }
 
