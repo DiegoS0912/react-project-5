@@ -9,7 +9,7 @@ import Pagination from '../components/pokedexPage/Pagination';
 
 const PokedexPage = () => {
   
-    const [page, setPage] = useState(2);
+    const [page, setPage] = useState(1);
     const [selectValue, setSelectValue] = useState('allPokemons');
     const trainerName = useSelector(store => store.trainerName);
     const pokemonName = useSelector(store => store.pokemonName);
@@ -18,7 +18,7 @@ const PokedexPage = () => {
 
     useEffect(() => {
         if (selectValue==='allPokemons') {
-            const url = 'https://pokeapi.co/api/v2/pokemon/?limit=1300';
+            const url = 'https://pokeapi.co/api/v2/pokemon/?limit=1305';
             getPokemons(url); 
         } else {
             getPerType(selectValue);
@@ -41,8 +41,10 @@ const PokedexPage = () => {
         }
     }
 
+        
+
         const quantity = 12;
-        // const total = Math.ceil(cbFilter().length / quantity);
+        const total = Math.ceil(cbFilter()?.length / quantity);
         const pagination = () => {
             const end = quantity * page;
             const start = end - quantity;
@@ -50,35 +52,47 @@ const PokedexPage = () => {
         }
 
     return (
-        <div className='pokedex'>
-            <section className='poke_header'>
-                <h3><span>Bienvenido {trainerName},  </span>Aquí podrás encontrar tu pokemon favorito</h3>
-                <div>
-                <form onSubmit={handleSubmit}>
-                    <input type="text" ref={textInput}/>
-                    <button>Buscar</button>
-                </form>
-                <SelectType
-                    setSelectValue={setSelectValue}
+        <>
+            <header className='head'>
+                <img className='image1' src="./assets/pokedex_img.png" alt="" />
+                <img className='image2' src="./assets/imagen_head.png" alt="image header" />
+            </header>
+            <div className='pokedex'>
+                <section className='poke_header'>
+                    <h3><span>Bienvenido {trainerName},  </span>Aquí podrás encontrar tu pokemon favorito</h3>
+                    <div>
+                    <form className='form' onSubmit={handleSubmit}>
+                        <input type="text" ref={textInput}/>
+                        <button>Buscar</button>
+                    </form>
+                    <SelectType
+                        className='type'
+                        setSelectValue={setSelectValue}
+                    />
+                    </div>
+                <Pagination
+                        setPage={setPage}
+                        page={page}
+                        total={total}
                 />
-                </div>
-            </section>
-            <section className='poke_container'>
-                {
-                    pagination()?.map(poke => (
-                        <PokeCard
-                        key={poke.url}
-                        url={poke.url}
-                        />
-                    ))
-                }
-            </section>
-            <Pagination
-                setPage={setPage}
-                page={page}
-                // total={total}
-            />
-        </div>
+                </section>
+                <section className='poke_container'>
+                    {
+                        pagination()?.map(poke => (
+                            <PokeCard
+                            key={poke.url}
+                            url={poke.url}
+                            />
+                        ))
+                    }
+                </section>
+                <Pagination
+                    setPage={setPage}
+                    page={page}
+                    total={total}
+                />
+            </div>
+        </>
     )
 }
 

@@ -1,3 +1,6 @@
+.head {
+    height: 100px;
+}
 .pokedex {
     padding-bottom: 25px;
 }
@@ -9,6 +12,16 @@
 }
 .poke_header h3 {
     text-align: center;
+}
+.form input {
+    width: 250px;
+    height: 25px;
+}
+.form button {
+    width: 100px;
+    height: 25px;
+    background-color: rgb(14, 31, 219);
+    color: aliceblue;
 }
 .poke_header div {
     display: flex;
@@ -24,4 +37,10 @@
 }
 .poke_header h3 {
     color: black
+}
+.head img:first-child {
+    width: 200px;
+    object-fit: contain;
+    position: absolute;
+    padding-left: 30px;
 }

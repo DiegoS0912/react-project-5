@@ -18,14 +18,20 @@ const HomePage = () => {
     }
 
   return (
-    <div className='front_page'>
-      <h1 className='title'>¡Hola Entrenador!</h1>
-      <h2 className='subtitle'>Para poder comenzar, dame tu nombre</h2>
-      <form onSubmit={handleSubmit} className='form'>
-          <input type="text" ref={textInput}/>
-          <button className='form_btn'>Comenzar</button>
-      </form>
-    </div>
+    <>
+      <header className='head'>
+      <img src="./assets/imagen_foot.png" alt="image" />
+      </header>
+      <div className='front_page'>
+        <img src="./assets/pokedex_img.png" alt="pokedex_img" />
+        <h1 className='title'>¡Hola Entrenador!</h1>
+        <h2 className='subtitle'>Para poder comenzar, dame tu nombre</h2>
+        <form onSubmit={handleSubmit} className='form'>
+            <input className='form_input' type="text" ref={textInput}/>
+            <button className='form_btn'>Comenzar</button>
+        </form>
+      </div>
+    </>
   )
 }
 

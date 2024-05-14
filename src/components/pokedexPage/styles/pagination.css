@@ -3,4 +3,11 @@
     display: flex;
     justify-content: space-evenly;
     margin: 30px;
+    align-items: center;
+    margin: 0 auto;
+    padding-top: 30px;
+}
+.pagination button {
+    width: 35px;
+    border-radius: 3px;
 }
